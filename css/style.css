@@ -1,3 +1,10 @@
+body {
+  background-color: #2b2b2b;
+}
+h1 {
+  color: white;
+}
+
 .animated_rainbow_1 {
   font-size: 100px;
   font-family: "Comic Sans MS", "Comic Sans";
