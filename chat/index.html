@@ -7,8 +7,13 @@
   </head>
   <body>
     <h1>This feature is not yet implemented, but will be coming soon!</h1>
-    <div>
-      <input id="input" type="text" placeholder="Say something..." autocomplete="off"/>
+    <div id="chat">
+      <div id="chat-messages">
+
+      <form id="chat-form" method="post">
+        <input type="text" name="message" placeholder="Enter a message..." maxlength="500" autocomplete="off">
+        <button type="submit">Send</button>
+      </form>
     </div>
     <script src="main.js"></script>
   </body>
