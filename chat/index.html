@@ -4,56 +4,55 @@
     <title>bigfloppa.net</title>
     <link rel="icon" href="https://static.wikia.nocookie.net/floppa/images/9/96/Floppa.jpg">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App</title>
+    <script defer src="https://bigfloppa.net/chat:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      #message-container {
+        width: 80%;
+        max-width: 1200px;
+      }
+
+      #message-container div {
+        background-color: #CCC;
+        padding: 5px;
+      }
+
+      #message-container div:nth-child(2n) {
+        background-color: #FFF;
+      }
+
+      #send-container {
+        position: fixed;
+        padding-bottom: 30px;
+        bottom: 0;
+        background-color: white;
+        max-width: 1200px;
+        width: 80%;
+        display: flex;
+      }
+
+      #message-input {
+        flex-grow: 1;
+      }
+    </style>
   </head>
   <body>
     <h1>This feature is not yet implemented, but will be coming soon!</h1>
-    <h2>Real Time Messaging</h1>
-    <pre id="messages" style="height: 400px; overflow: scroll"></pre>
-    <input type="text" id="messageBox" placeholder="Type your message here" style="display: block; width: 100%; margin-bottom: 10px; padding: 10px;" />
-    <button id="send" title="Send Message!" style="width: 100%; height: 30px;">Send Message</button>
-
-    <script>
-      (function() {
-        const sendBtn = document.querySelector('#send');
-        const messages = document.querySelector('#messages');
-        const messageBox = document.querySelector('#messageBox');
-
-        let ws;
-
-        function showMessage(message) {
-          messages.textContent += `\n\n${message}`;
-          messages.scrollTop = messages.scrollHeight;
-          messageBox.value = '';
-        }
-
-        function init() {
-          if (ws) {
-            ws.onerror = ws.onopen = ws.onclose = null;
-            ws.close();
-          }
-
-          ws = new WebSocket('wss://bigfloppa.net/chat/:6969');
-          ws.onopen = () => {
-            console.log('Connection opened!');
-          }
-          ws.onmessage = ({ data }) => showMessage(data);
-          ws.onclose = function() {
-            ws = null;
-          }
-        }
-
-        sendBtn.onclick = function() {
-          if (!ws) {
-            showMessage("No WebSocket connection :(");
-            return ;
-          }
-
-          ws.send(messageBox.value);
-          showMessage(messageBox.value);
-        }
-
-        init();
-      })();
-    </script>
+    <div id="message-container"></div>
+    <form id="send-container">
+      <input type="text" id="message-input">
+      <button type="submit" id="send-button">Send</button>
+    </form>
   </body>
 </html>
