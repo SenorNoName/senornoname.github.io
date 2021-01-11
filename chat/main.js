@@ -1,28 +1,37 @@
-var ws_uri = "wss://bigfloppa.net/chat:9600";
-var websocket = new WebSocket(ws_uri);
+const Html5WebSocket = require('html5-websocket');
+const ReconnectingWebSocket = require('reconnecting-websocket');
+
+let ws_host = 'bigfloppa.net/chat';
+let ws_port = '9600';
+const options = { WebSocket: Html5WebSocket };
+const rws = new ReconnectingWebSocket('wss://' + ws_host + ':' + ws_port + '/ws', undefined, options);
+rws.timeout = 1000;
 
 // on open
-websocket.onopen = function(event) {
+rws.addEventListener('open', () => {
   MessageAdd('<div class="message green">You have entered the chat room.</div>');
-};
+});
 
 // on close
-websocket.onclose = function(event) {
+rws.addEventListener('close', () => {
   MessageAdd('<div class="message blue">You have been disconnected.</div>');
-};
+});
 
 // on error
-websocket.onerror = function(event) {
+rws.onerror = (err) => {
   MessageAdd('<div class="message red">Connection to chat failed.</div>');
+  if (err.code == 'EHOSTDOWN') {
+        console.log('[Client] Error: server down.');
+  }
 };
 
-websocket.onmessage = function(event) {
+rws.addEventListener('message', (e) => {
   var data = JSON.parse(event.data);
 
   if (data.type == "message") {
     MessageAdd('<div class="message">' + data.username + ': ' + data.message + '</div>');
   }
-};
+});
 
 document.getElementById("chat-form").addEventListener("submit", function(event) {
   event.preventDefault();
