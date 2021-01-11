@@ -1,4 +1,4 @@
-var ws_uri = "wss://bigfloppa.net:9600";
+var ws_uri = "wss://bigfloppa.net/chat:9600";
 var websocket = new WebSocket(ws_uri);
 
 // on open
