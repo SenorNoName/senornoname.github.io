@@ -23,5 +23,5 @@ while (i < 107) {
   dispImg("images/floppa" + i + ".jpg", i);
   img.onload = function() {
     i++;
-  }
+  };
 }
