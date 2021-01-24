@@ -55,9 +55,54 @@ body {
   background-color: white;
   color: black;
   border: 2px solid #2d40d2;
+  position: absolute;
+  left: 5px;
 }
 
 .gallery_button:hover {
   background-color: #2d40d2;
   color: white;
+}
+
+.chat_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #2d40d2;
+  position: absolute;
+  left: 145px;
+}
+
+.chat_button:hover {
+  background-color: #2d40d2;
+  color: white;
+}
+
+.vote_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #2d40d2;
+  position: absolute;
+  left: 270px;
+}
+
+.vote_button:hover {
+  background-color: #2d40d2;
+  color: white;
+}
+
+.discord_button {
+  position: absolute;
+  left: 400px;
+}
+
+.button_row {
+  position: absolute;
+  top: 410px;
+  left: 5px;
+}
+
+.floppa_month {
+  position: absolute;
+  top: 450px;
+  left: 5px;
 }
