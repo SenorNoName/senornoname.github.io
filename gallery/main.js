@@ -12,7 +12,7 @@ function dispImg(src, int, _callback) {
 
   document.getElementById("gal").appendChild(figure);
   document.getElementById("item" + int).appendChild(img);
-  _callback();
+  img.onload = _callback();
 }
 
 while (i < 205) {
