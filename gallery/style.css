@@ -20,7 +20,7 @@ body {
 .gallery {
     display: grid;
     grid-template-columns: repeat(5, 200px);
-    grid-template-rows: repeat(22, 200px);
+    grid-template-rows: repeat(40, 200px);
     grid-gap: 15px;
 }
 

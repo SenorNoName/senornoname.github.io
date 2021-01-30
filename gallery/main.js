@@ -1,4 +1,6 @@
-function dispImg(src, int) {
+var i = 1;
+
+function dispImg(src, int, _callback) {
   var img = document.createElement("img");
   img.src = src;
   img.classList.add("gallery_img");
@@ -10,8 +12,12 @@ function dispImg(src, int) {
 
   document.getElementById("gal").appendChild(figure);
   document.getElementById("item" + int).appendChild(img);
+  _callback();
 }
 
-for (i = 1; i < 107; i++) {
-  dispImg("images/floppa" + i + ".jpg", i);
+while (i < 205) {
+  dispImg("images/floppa" + i + ".jpg", i, function() {
+    i++;
+    console.log(i);
+  });
 }
