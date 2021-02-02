@@ -41,3 +41,8 @@ body {
 .zoom:hover {
   transform: scale(1.5);
 }
+
+p1 {
+  font-family: "Comic Sans MS", "Comic Sans";
+  color: white;
+}
