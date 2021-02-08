@@ -18,6 +18,5 @@ function dispImg(src, int, _callback) {
 while (i < 205) {
   dispImg("images/floppa" + i + ".jpg", i, function() {
     i++;
-    console.log(i);
   });
 }

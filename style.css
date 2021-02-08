@@ -92,7 +92,20 @@ body {
 
 .discord_button {
   position: absolute;
+  left: 530px;
+}
+
+.quiz_button {
+  background-color: white;
+  color: black;
+  border: 2px solid #2d40d2;
+  position: absolute;
   left: 400px;
+}
+
+.quiz_button:hover {
+  background-color: #2d40d2;
+  color: white;
 }
 
 .button_row {
