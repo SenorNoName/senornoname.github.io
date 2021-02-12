@@ -15,6 +15,13 @@ function dispImg(src, int, _callback) {
   img.onload = _callback();
 }
 
+while (i < 107) {
+  dispImg("images/floppa" + i + ".jpg", i, function() {
+    i++;
+  });
+}
+
+i = 109;
 while (i < 205) {
   dispImg("images/floppa" + i + ".jpg", i, function() {
     i++;
