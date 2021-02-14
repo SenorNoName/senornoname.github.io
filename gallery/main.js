@@ -16,14 +16,14 @@ function dispImg(src, int) {
   document.getElementById("item" + int).appendChild(img);
 }
 
-for (i = 1; i < 26; i++) {
+for (i = 1; i < 17; i++) {
   dispImg("images/floppa" + i + ".jpg", i);
-  index = 26;
+  index = 17;
 }
 
 function back() {
   if (flag == true) {
-    for (i = 5; i < 26; i++) {
+    for (i = 13; i < 17; i++) {
       var image = document.createElement("img");
       image.classList.add("gallery_img");
       image.classList.add("zoom");
@@ -31,10 +31,11 @@ function back() {
       document.getElementById("item" + i).appendChild(image);
     }
     flag = false;
+    index++;
   }
-  if (index != 26) {
-    index -= 50;
-    for (i = 1; i < 26; i++) {
+  if (index != 17) {
+    index -= 32;
+    for (i = 1; i < 17; i++) {
       var newImg = document.getElementById("img" + i);
       newImg.src = "images/floppa" + index + ".jpg";
       document.getElementById("item" + i).appendChild(newImg);
@@ -44,24 +45,26 @@ function back() {
 }
 
 function forward() {
-  if (index == 201) {
-    for (i = 1; i < 5; i++) {
-      var newImg = document.getElementById("img" + i);
-      newImg.src = "images/floppa" + index + ".jpg";
-      document.getElementById("item" + i).appendChild(newImg);
-      index++;
-    }
-    for (i = 5; i < 26; i++) {
-      document.getElementById("img" + i).remove();
-    }
-    flag = true;
-    index = 226;
-  } else {
-    for (i = 1; i < 26; i++) {
-      var newImg = document.getElementById("img" + i);
-      newImg.src = "images/floppa" + index + ".jpg";
-      document.getElementById("item" + i).appendChild(newImg);
-      index++;
+  if (index <= 193) {
+    if (index == 193) {
+      for (i = 1; i < 13; i++) {
+        var newImg = document.getElementById("img" + i);
+        newImg.src = "images/floppa" + index + ".jpg";
+        document.getElementById("item" + i).appendChild(newImg);
+        index++;
+      }
+      for (i = 13; i < 17; i++) {
+        document.getElementById("img" + i).remove();
+      }
+      flag = true;
+      index = 208;
+    } else {
+      for (i = 1; i < 17; i++) {
+        var newImg = document.getElementById("img" + i);
+        newImg.src = "images/floppa" + index + ".jpg";
+        document.getElementById("item" + i).appendChild(newImg);
+        index++;
+      }
     }
   }
 }
