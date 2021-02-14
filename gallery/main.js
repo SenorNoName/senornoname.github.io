@@ -37,7 +37,11 @@ function back() {
     index -= 32;
     for (i = 1; i < 17; i++) {
       var newImg = document.getElementById("img" + i);
-      newImg.src = "images/floppa" + index + ".jpg";
+      if (index == 107 || index == 108) {
+        newImg.src = "images/floppa" + index + ".JPG";
+      } else {
+        newImg.src = "images/floppa" + index + ".jpg";
+      }
       document.getElementById("item" + i).appendChild(newImg);
       index++;
     }
@@ -49,7 +53,11 @@ function forward() {
     if (index == 193) {
       for (i = 1; i < 13; i++) {
         var newImg = document.getElementById("img" + i);
-        newImg.src = "images/floppa" + index + ".jpg";
+        if (index == 107 || index == 108) {
+          newImg.src = "images/floppa" + index + ".JPG";
+        } else {
+          newImg.src = "images/floppa" + index + ".jpg";
+        }
         document.getElementById("item" + i).appendChild(newImg);
         index++;
       }
@@ -61,7 +69,11 @@ function forward() {
     } else {
       for (i = 1; i < 17; i++) {
         var newImg = document.getElementById("img" + i);
-        newImg.src = "images/floppa" + index + ".jpg";
+        if (index == 107 || index == 108) {
+          newImg.src = "images/floppa" + index + ".JPG";
+        } else {
+          newImg.src = "images/floppa" + index + ".jpg";
+        }
         document.getElementById("item" + i).appendChild(newImg);
         index++;
       }
