@@ -3,13 +3,16 @@ body {
 }
 
 .animated_rainbow_1 {
-  font-size: 100px;
+  font-size: 75px;
   font-family: "Comic Sans MS", "Comic Sans";
   background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
   -webkit-animation: animatedBackground_a 5s linear infinite alternate;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
+  flex: 1 1 auto;
+  margin-left: 1%;
+  letter-spacing: 1px;
 }
 
 .animated_rainbow_2 {
@@ -37,85 +40,103 @@ body {
   100% { background-position: -500px 0 }
 }
 
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.gallery_button {
-  background-color: white;
-  color: black;
-  border: 2px solid #2d40d2;
-  position: absolute;
-  left: 5px;
-}
-
-.gallery_button:hover {
-  background-color: #2d40d2;
-  color: white;
-}
-
-.chat_button {
-  background-color: white;
-  color: black;
-  border: 2px solid #2d40d2;
-  position: absolute;
-  left: 145px;
-}
-
-.chat_button:hover {
-  background-color: #2d40d2;
-  color: white;
-}
-
-.vote_button {
-  background-color: white;
-  color: black;
-  border: 2px solid #2d40d2;
-  position: absolute;
-  left: 270px;
-}
-
-.vote_button:hover {
-  background-color: #2d40d2;
-  color: white;
-}
-
-.discord_button {
-  position: absolute;
-  left: 530px;
-}
-
-.quiz_button {
-  background-color: white;
-  color: black;
-  border: 2px solid #2d40d2;
-  position: absolute;
-  left: 400px;
-}
-
-.quiz_button:hover {
-  background-color: #2d40d2;
-  color: white;
-}
-
-.button_row {
-  position: absolute;
-  top: 410px;
-  left: 5px;
-}
-
 .floppa_month {
   position: absolute;
   top: 450px;
   left: 5px;
+}
+
+.navbar{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #505050;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  margin-right: 15%;
+}
+
+a {
+  margin: 15px;
+  color: #000;
+  text-decoration: none;
+  font-family: "Comic Sans MS", "Comic Sans";
+  font-size: 30px;
+  color: ivory;
+}
+
+a:hover {
+  color: #2d40d2;
+}
+
+.discord {
+  position: absolute;
+  top: 75px;
+}
+
+.discord_img {
+  position: absolute;
+  top: 35px;
+  left: 385px;
+}
+
+.gif {
+  position: absolute;
+  top: 475px;
+  left: 750px;
+}
+
+.cube {
+  position: absolute;
+  top: 180px;
+}
+
+.spin {
+  position: absolute;
+  top: 750px;
+  left: 1400px;
+}
+
+.bio {
+  position: absolute;
+  left: 800px;
+  top: 75px;
+}
+
+.fact {
+  position: absolute;
+  left: 800px;
+  top: 700px;
+}
+
+p1 {
+  font-family: "Comic Sans MS", "Comic Sans";
+  font-size: 20px;
+  color: ivory;
+}
+
+.flop_month_img {
+  position: absolute;
+  left: 100px;
+}
+
+#fact {
+  display: inline-block;
+  width: 400px;
+}
+
+.bio_text {
+  display: inline-block;
+  width: 800px;
 }
